@@ -16,6 +16,19 @@ class PalindromeTest(unittest.TestCase):
         resultat = ohce.chaine_miroir(chaine)
 
         self.assertIn(chaine[::-1], resultat)
+    
+    @parameterized.parameterized.expand([("radar")])
+    def test_palindrome(self, palindrome):
+
+        logging.info("Test palindrome")
+
+        ohce = Ohce()
+        resultat = ohce.chaine_miroir(palindrome)
+
+        self.assertIn(palindrome, resultat)
+
+        resultat_miroir = resultat[-8: len(resultat)]
+        self.assertIn("Bien dit", resultat_miroir)
 
 
 if __name__ == '__main__':
