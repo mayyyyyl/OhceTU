@@ -5,6 +5,6 @@ class Ohce:
         chaine_miroir = mot[::-1]
 
         if mot == chaine_miroir:
-            return f"{chaine_miroir}  \nBien dit"
+            return f"Bonjour {chaine_miroir}  \nBien dit"
 
-        return f"{chaine_miroir} \n"
+        return f"Bonjour {chaine_miroir} \nAu revoir"
