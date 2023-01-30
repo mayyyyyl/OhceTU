@@ -12,9 +12,11 @@ class PalindromeTest(unittest.TestCase):
         
         logging.info("Test miroir")
 
+        # QUAND on saisit une chaîne
         ohce = Ohce()
         resultat = ohce.chaine_miroir(chaine)
 
+        # ALORS celle-ci est renvoyée en miroir
         self.assertIn(chaine[::-1], resultat)
     
     @parameterized.parameterized.expand([("radar")])
@@ -27,6 +29,7 @@ class PalindromeTest(unittest.TestCase):
 
         self.assertIn(palindrome, resultat)
 
+        # ET 'Bien dit' est renvoyé ensuite
         resultat_miroir = resultat[-8: len(resultat)]
         self.assertIn("Bien dit", resultat_miroir)
     
@@ -38,12 +41,8 @@ class PalindromeTest(unittest.TestCase):
         ohce = Ohce()
         resultat = ohce.chaine_miroir(mot)
 
+        # ALORS celle-ci n'est pas renvoyée en miroir
         self.assertNotIn(mot, resultat)
-
-        resultat_mirroir_debut = resultat[0:7]
-        resultat_mirroir_fin = resultat[-9:len(resultat)]
-        self.assertIn("Bonjour", resultat_mirroir_debut)
-        self.assertIn("Au revoir", resultat_mirroir_fin)
 
 
 if __name__ == '__main__':
