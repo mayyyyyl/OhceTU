@@ -7,25 +7,25 @@ logging.basicConfig(level="INFO")
 
 class PalindromeTest(unittest.TestCase):
 
-    @parameterized.parameterized.expand([("rotor")])
-    def test_miroir(self, chaine):
+    @parameterized.parameterized.expand([("fr", "rotor")])
+    def test_miroir(self, langue, chaine):
         
         logging.info("Test miroir")
 
         # QUAND on saisit une chaîne
         ohce = Ohce()
-        resultat = ohce.chaine_miroir(chaine)
+        resultat = ohce.chaine_miroir(langue, chaine)
 
         # ALORS celle-ci est renvoyée en miroir
         self.assertIn(chaine[::-1], resultat)
     
-    @parameterized.parameterized.expand([("radar")])
-    def test_palindrome(self, palindrome):
+    @parameterized.parameterized.expand([("fr", "radar")])
+    def test_palindrome(self, langue, palindrome):
 
         logging.info("Test palindrome")
 
         ohce = Ohce()
-        resultat = ohce.chaine_miroir(palindrome)
+        resultat = ohce.chaine_miroir(langue, palindrome)
 
         self.assertIn(palindrome, resultat)
 
@@ -33,13 +33,13 @@ class PalindromeTest(unittest.TestCase):
         resultat_miroir = resultat[-8: len(resultat)]
         self.assertIn("Bien dit", resultat_miroir)
     
-    @parameterized.parameterized.expand([("hibou")])
-    def test_pas_palindrome(self, mot):
+    @parameterized.parameterized.expand([("fr", "hibou")])
+    def test_pas_palindrome(self, langue, mot):
 
         logging.info("Test pas palindrome")
 
         ohce = Ohce()
-        resultat = ohce.chaine_miroir(mot)
+        resultat = ohce.chaine_miroir(langue, mot)
 
         # ALORS celle-ci n'est pas renvoyée en miroir
         self.assertNotIn(mot, resultat)
