@@ -1,4 +1,4 @@
-from main import Ohce
+from ohce import Ohce
 import parameterized
 import unittest
 import logging
