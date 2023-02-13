@@ -24,3 +24,7 @@ Pour lancer un fichier de test: py testOhcePalindrome.py ou py -m unittest testO
 ### Résultat de la commande py -m unittest
 
 ![image](https://user-images.githubusercontent.com/90853285/218526031-bbaac1ab-50d8-4b3c-aabe-20e564714920.png)
+
+
+
+Pour cet exercice, j'ai commencé par écrire les tests puis écrire le code correspondant à ces tests.
